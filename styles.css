@@ -176,6 +176,10 @@ h3 {
   transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
 }
 
+button.button {
+  cursor: pointer;
+}
+
 .button:hover {
   transform: translateY(-2px);
 }
@@ -258,6 +262,11 @@ h3 {
   font-weight: 900;
 }
 
+.status-pill.soon {
+  background: #fff0c9;
+  color: #6e4c12;
+}
+
 .feature-list {
   display: grid;
   gap: 10px;
@@ -337,6 +346,70 @@ h3 {
   background: #f3ecdc;
 }
 
+.wishlist {
+  background:
+    linear-gradient(135deg, rgba(15, 47, 42, 0.96), rgba(23, 70, 61, 0.94)),
+    var(--forest);
+  color: #fffdf8;
+}
+
+.wishlist .section-title p,
+.wishlist .soon-copy p {
+  color: rgba(255, 253, 248, 0.74);
+}
+
+.soon-card {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1fr);
+  gap: clamp(24px, 5vw, 58px);
+  align-items: center;
+  padding: clamp(22px, 4vw, 42px);
+  border: 1px solid rgba(255, 253, 248, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.16);
+}
+
+.soon-visual {
+  position: relative;
+  min-height: 320px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 253, 248, 0.12);
+  background:
+    radial-gradient(circle at 50% 48%, rgba(201, 151, 60, 0.18), transparent 38%),
+    rgba(255, 253, 248, 0.06);
+}
+
+.soon-visual img {
+  width: min(230px, 72%);
+  filter: drop-shadow(0 28px 44px rgba(0, 0, 0, 0.28));
+}
+
+.soon-visual span {
+  position: absolute;
+  right: 22px;
+  top: 22px;
+  padding: 8px 11px;
+  border-radius: 999px;
+  background: var(--gold);
+  color: #17120a;
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+.soon-copy .feature-list li {
+  color: rgba(255, 253, 248, 0.86);
+}
+
+.wishlist-note {
+  min-height: 28px;
+  margin: 14px 0 0;
+  font-weight: 800;
+  color: #f7d889 !important;
+}
+
 .contact > div {
   max-width: 720px;
 }
@@ -393,6 +466,7 @@ footer a {
 
   .hero,
   .product,
+  .soon-card,
   .contact {
     grid-template-columns: 1fr;
   }
