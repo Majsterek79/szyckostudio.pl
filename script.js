@@ -195,6 +195,7 @@ const selectors = {
   savingsFeatures: () => document.querySelectorAll(".product-copy .feature-list li"),
   productActions: () => document.querySelectorAll(".product-copy .product-actions .button"),
   savingsShot: () => document.querySelector(".product-shot"),
+  savingsIcon: () => document.querySelector(".product-icon"),
   principlesEyebrow: () => document.querySelector("#principles .section-title .eyebrow"),
   principlesTitle: () => document.querySelector("#principles .section-title h2"),
   principles: () => document.querySelectorAll(".principle-grid > div"),
@@ -246,6 +247,8 @@ function applyLanguage(lang) {
   setText(selectors.savingsBody(), data.savingsBody);
   setList(selectors.savingsFeatures(), data.savingsFeatures);
   selectors.savingsShot()?.setAttribute("src", data.savingsImage);
+  selectors.savingsShot()?.setAttribute("alt", data.savingsTitle);
+  selectors.savingsIcon()?.setAttribute("alt", data.savingsTitle);
   setList(selectors.productActions(), data.productActions);
   setText(selectors.principlesEyebrow(), data.principlesEyebrow);
   setText(selectors.principlesTitle(), data.principlesTitle);
