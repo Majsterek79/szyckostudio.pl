@@ -31,6 +31,7 @@ const copy = {
     savingsHeading: "Lokalny notes do odkładania pieniędzy",
     savingsBody: "Aplikacja pomaga dzielić oszczędności na cele, koperty i skrytki. Możesz planować wpłaty z terminem albo bez daty, zapisywać wypłaty, tworzyć backupy i pilnować postępów bez podpinania konta bankowego.",
     savingsFeatures: ["Cele oszczędnościowe i prywatne skrytki", "Planowanie z terminem albo bez daty", "Lokalne dane, kopie zapasowe i brak chmury", "Model: płacisz raz i masz na zawsze"],
+    savingsImage: "assets/skarb-onka-screenshot-pl.png",
     productActions: ["Otwórz w Microsoft Store", "Zapytaj o aplikację"],
     principlesEyebrow: "Filozofia",
     principlesTitle: "Małe narzędzia, które szanują użytkownika",
@@ -84,6 +85,7 @@ const copy = {
     savingsHeading: "A local notebook for saving money",
     savingsBody: "The app helps you split savings into goals, envelopes and vaults. Plan deposits with or without deadlines, record withdrawals, create backups and track progress without connecting a bank account.",
     savingsFeatures: ["Savings goals and private vaults", "Planning with or without a deadline", "Local data, backups and no cloud", "Model: pay once and keep it forever"],
+    savingsImage: "assets/skarb-onka-screenshot-en.png",
     productActions: ["Open in Microsoft Store", "Ask about the app"],
     principlesEyebrow: "Philosophy",
     principlesTitle: "Small tools that respect the user",
@@ -137,6 +139,7 @@ const copy = {
     savingsHeading: "Ein lokales Notizbuch zum Geldzurücklegen",
     savingsBody: "Die App hilft, Ersparnisse in Ziele, Umschläge und Verstecke aufzuteilen. Plane Einzahlungen mit oder ohne Termin, speichere Auszahlungen, erstelle Backups und verfolge Fortschritte ohne Bankverbindung.",
     savingsFeatures: ["Sparziele und private Verstecke", "Planung mit oder ohne Termin", "Lokale Daten, Backups und keine Cloud", "Modell: einmal zahlen und dauerhaft nutzen"],
+    savingsImage: "assets/skarb-onka-screenshot-de.png",
     productActions: ["Im Microsoft Store öffnen", "Zur App fragen"],
     principlesEyebrow: "Philosophie",
     principlesTitle: "Kleine Werkzeuge, die Nutzer respektieren",
@@ -191,6 +194,7 @@ const selectors = {
   savingsBody: () => document.querySelector(".product-copy > p:not(.status-pill)"),
   savingsFeatures: () => document.querySelectorAll(".product-copy .feature-list li"),
   productActions: () => document.querySelectorAll(".product-copy .product-actions .button"),
+  savingsShot: () => document.querySelector(".product-shot"),
   principlesEyebrow: () => document.querySelector("#principles .section-title .eyebrow"),
   principlesTitle: () => document.querySelector("#principles .section-title h2"),
   principles: () => document.querySelectorAll(".principle-grid > div"),
@@ -241,6 +245,7 @@ function applyLanguage(lang) {
   setText(selectors.savingsHeading(), data.savingsHeading);
   setText(selectors.savingsBody(), data.savingsBody);
   setList(selectors.savingsFeatures(), data.savingsFeatures);
+  selectors.savingsShot()?.setAttribute("src", data.savingsImage);
   setList(selectors.productActions(), data.productActions);
   setText(selectors.principlesEyebrow(), data.principlesEyebrow);
   setText(selectors.principlesTitle(), data.principlesTitle);
