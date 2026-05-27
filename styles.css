@@ -77,6 +77,32 @@ nav a:hover {
   color: var(--forest);
 }
 
+.language-switcher {
+  display: inline-flex;
+  flex-shrink: 0;
+  gap: 6px;
+  padding: 5px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 253, 248, 0.72);
+}
+
+.lang-button {
+  min-height: 32px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(16, 32, 28, 0.68);
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.lang-button.active {
+  background: var(--forest);
+  color: #fffdf8;
+}
+
 main {
   overflow: hidden;
 }
@@ -462,6 +488,10 @@ footer a {
     width: 100%;
     overflow-x: auto;
     padding-bottom: 4px;
+  }
+
+  .language-switcher {
+    align-self: flex-start;
   }
 
   .hero,
