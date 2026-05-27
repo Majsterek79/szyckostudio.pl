@@ -95,12 +95,49 @@ nav a:hover {
   background: transparent;
   color: rgba(16, 32, 28, 0.68);
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-weight: 900;
 }
 
 .lang-button.active {
   background: var(--forest);
   color: #fffdf8;
+}
+
+.flag {
+  width: 18px;
+  height: 12px;
+  display: inline-block;
+  flex: 0 0 auto;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(16, 32, 28, 0.2);
+}
+
+.flag-pl {
+  background: linear-gradient(to bottom, #fff 0 50%, #dc143c 50% 100%);
+}
+
+.flag-de {
+  background: linear-gradient(to bottom, #111 0 33.33%, #dd0000 33.33% 66.66%, #ffce00 66.66% 100%);
+}
+
+.flag-en {
+  position: relative;
+  background: #012169;
+}
+
+.flag-en::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(32deg, transparent 0 42%, #fff 42% 48%, #c8102e 48% 53%, #fff 53% 59%, transparent 59%),
+    linear-gradient(148deg, transparent 0 42%, #fff 42% 48%, #c8102e 48% 53%, #fff 53% 59%, transparent 59%),
+    linear-gradient(to bottom, transparent 0 35%, #fff 35% 43%, #c8102e 43% 57%, #fff 57% 65%, transparent 65%),
+    linear-gradient(to right, transparent 0 35%, #fff 35% 43%, #c8102e 43% 57%, #fff 57% 65%, transparent 65%);
 }
 
 main {
@@ -289,8 +326,10 @@ button.button {
 }
 
 .status-pill.soon {
-  background: #fff0c9;
-  color: #6e4c12;
+  background: #f0c45b;
+  color: #172019;
+  border: 1px solid rgba(255, 253, 248, 0.36);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
 }
 
 .feature-list {
